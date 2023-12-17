@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.homeImage{
+    width: 100%;
+    height: 450px;
+    background-image: url(https://images.unsplash.com/photo-1515343480029-43cdfe6b6aae?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    color: #F8F9FA;
+    display: flex;
+    align-items: baseline;
+    
+    
+    
+}
+.text{
+    
+    position: absolute;
+    left: 80px;
+    top:280px;
+}
+.tabs{
+    margin: auto;
+    width: 80%;
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #b1c3d5;
+    overflow: hidden;
+}
+.box{
+    
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+    gap: 10px;
+}
+.homeMenu{
+    height: 100%;
+    width: 13%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+   
+}
+
+.drop{
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    width: 40%;
+    font-weight: bold;
+    background: #DEE2E6;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    font-size: small;   
+     overflow: hidden;
+}
+
+
+.btns{
+    
+    height: 100%;
+    width: 26%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.kk{
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    width: 40%;
+    background-color: #339AF0;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 1px;
+    font-size: 13px;
+    color:  #DEE2E6;
+    overflow: hidden
+    ;
+
+}
+.mobiletab{
+    display: none;
+}
+.mobiletab button{
+    height: 30px;
+    width: auto;
+    border: none;
+    background: transparent;
+    font-weight: bold;
+}
+.mobiletab select{
+    height: 30px;
+    width: auto;
+}
+@media (max-width: 900px) {
+    .text{
+    
+        position: absolute;
+        left: 40px;
+        top:300px;
+    }
+    .tabs{
+        font-size: 10px;
+    }
+    .btns{
+        height: 100%;
+    width: 20%;
+    font-size: 10px;
+    }
+    .drop{
+        width: 30%;
+        font-size: 10px;
+
+    }
+    
+}
+@media (max-width: 750px) {
+    .tabs{
+        display: none;
+    }
+    .homeImage{
+        height: 300px;
+    }
+    .text{
+    
+        position: absolute;
+        left: 10px;
+        top:200px;
+    }
+    .mobiletab{
+        margin: 15px;
+        padding: 0 15px 0 15px;
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+}
