@@ -1,0 +1,18 @@
+/* app.post('/api/addComment/:postId', async (req, res) => {
+    try {
+      const { postId } = req.params;
+      const { text, author } = req.body;
+  
+      const post = await Post.findById(postId);
+      if (!post) {
+        return res.status(404).json({ message: 'Post not found' });
+      }
+  
+      post.comments.push({ text, author });
+      await post.save();
+      res.status(200).json({ message: 'Comment added successfully' });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  }); */

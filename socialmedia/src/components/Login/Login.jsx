@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import React from 'react';
 import './login.css'
 import { getdata } from "../Apis/Apicall";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { MyContext } from "../contextApi/customApi";
+
 
 function Login() {
+  const {setUserdata} = useContext(MyContext);
     const navigate = useNavigate();
     const [userdata, setData] = useState();
     const [location, setlocation] = useState('/home');
@@ -22,7 +25,7 @@ function Login() {
         const valid = userdata.filter((item)=>item.name===formData.username && item.password===formData.password)
       
     
-    console.log(valid);
+    setUserdata(valid);
     if(valid.length>0){
       alert("succesful")
       navigate('/home')
@@ -32,7 +35,7 @@ function Login() {
     }
 
         
-        console.log(userdata);
+        // console.log(userdata);
       };
     
       // Function to handle changes in form fields
@@ -77,7 +80,7 @@ function Login() {
 
         
 
-        <a href="" className="forgotpass">Forget Password?</a>
+        <Link to='/forget' className="forgotpass">Forget Password?</Link>
 
         <button type="submit" to={`${location}`} class="button-89" role="button">Login</button>
       </form>

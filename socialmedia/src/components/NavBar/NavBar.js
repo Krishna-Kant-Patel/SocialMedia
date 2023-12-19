@@ -9,10 +9,10 @@ function Navbar(){
             <h2>UnityStream</h2>
         </div>
         <div className="menu">
-            <div className="menubar" id='signup'><Link to='/signup' for='signup'>Signup</Link></div>
-            <div className="menubar" id='login'><Link to='/login' for='login' >Login</Link></div>
+            <div className="menubar" id='signup'><Link to='/signup'>Signup</Link></div>
+            <div className="menubar" id='login'><Link to=''  >Login</Link></div>
             <div className="menubar">Contact</div>
-            <div className="menubar">About us</div>
+            <div className="menubar"><Link to='/'>Log Out</Link></div>
         </div>
 
     </div>

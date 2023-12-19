@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import './create.css';
+import './edit.css';
+import { updatepost } from "../Apis/Apicall";
+
 
 function Modals(props){
 
   return<>
   <Modal show={props.show} onHide={props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Create Post</Modal.Title>
+          <Modal.Title>Edit Post</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <form className="formcontainer" onSubmit={props.handleSubmit}>
         <input
           type="file"
           label="Image"
-          name="myFile"
+          name="image"
           accept=".jpeg, .png, .jpg"
           onChange={(e) => props.handleFileUpload(e)}
         />
-        <input onChange={props.titleCaption} type="text" name="title" className="caption" placeholder="Enter Title" required />
-        <input onChange={props.titleCaption} type="text" name="caption" className="caption" placeholder="Enter Caption" required />
+        <input onChange={props.titleCaption} type="text" name="title" className="caption" placeholder="Enter Title"  />
+        <input onChange={props.titleCaption} type="text" name="caption" className="caption" placeholder="Enter Caption"  />
 
-        <button class="button-3" >Post</button>
+        <button class="button-3" nClick={props.handleClose}>Post</button>
         
       </form>
         </Modal.Body>
@@ -37,40 +39,27 @@ function Modals(props){
   </>
 }
 
-export default function ImageUploader() {
+export default function Editpost({id}) {
   
-  const [postImage, setPostImage] = useState({
-    image: "",
-    title:"",
-    caption:""
-  });
+  const [postImage, setPostImage] = useState();
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(()=>{
+
+},[postImage,show])
   
 
-const url = "http://localhost:8000/uploads";
-const createImage = (newImage) => axios.post(url, newImage);
 
-  const createPost = async (post) => {
-    try {
-      await createImage(post);
-      alert("posted successfully");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createPost(postImage);
-    setPostImage({
-      image: "",
-      title:"",
-      caption:""
-    })
+    console.log(id,postImage);
+    updatepost(id,postImage);
+    setPostImage('')
+    
   };
 
   const convertToBase64 = (file) => {
@@ -103,10 +92,8 @@ const createImage = (newImage) => axios.post(url, newImage);
   return (
     <>
       
-      
-        <a onClick={handleShow}>
-        Create a Post
-      </a>
+      <img onClick={handleShow} width="50" height="50" src="https://img.icons8.com/bubbles/50/edit.png" alt="edit"/>
+        
 
       
       <Modals 

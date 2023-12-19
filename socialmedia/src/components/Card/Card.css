@@ -23,7 +23,7 @@ width: 100%;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 5px;
+    padding: 10px;
 }
 .title button{
     border: none;
@@ -47,6 +47,7 @@ width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    object-fit: contain;
 }
 .userDetail{
     height: 100%;
@@ -82,30 +83,53 @@ width: 100%;
   }
   
   .dropdown {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+
+  }
+  .comments{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .comments input{
+    padding-left: 10px;
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-bottom: 2px solid gray;
+  }
+  .commentBox{
     position: relative;
-    display: inline-block;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-evenly;
+
   }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  .commentsection{
+    border-bottom: 1px solid gray;
+    width: 80%;
+    height: 50px;
+    text-align: justify;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  .commentsection p{
+    margin-top: 10px;
   }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1;}
-  .dropdown:hover .dropdown-content {display: block;}
-  .dropdown:hover .dropbtn {background-color: #F8F9FA;}
+  .usertag{
+    text-decoration: underline;
+    color: blue;
+  }
 
   @media(max-width: 800px){
     .placecontainer{
